@@ -1,5 +1,5 @@
 [package]
-name = "rF2-Manager"
+name = "rf2_manager"
 version = "0.1.0"
 authors = ["balaji"]
 edition = "2018"
