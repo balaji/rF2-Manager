@@ -1,0 +1,10 @@
+[package]
+name = "rF2-Manager"
+version = "0.1.0"
+authors = ["balaji"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+web-view = { version = "0.6.3", features = ["edge"] }
