@@ -15,10 +15,10 @@
     "typescript": "^3.0.1"
   },
   "scripts": {
-    "clean": "rm dist/*",
-    "parcel": "$(npm bin)/parcel build --no-cache --public-url './' ./src/index.html -o output.html",
-    "inline": "$(npm bin)/inline-assets ./dist/output.html ./dist/index.html",
-    "build": "npm run -s clean && npm run -s parcel && npm run -s inline",
+    "clean": "rm -rf ./dist",
+    "parcel": "$(npm bin)/parcel build -d ../dist --public-url './' ./src/index.html -o output.html",
+    "inline": "$(npm bin)/inline-assets ../dist/output.html ../dist/index.html",
+    "build": "yarn clean && yarn parcel && yarn inline",
     "dev": "$(npm bin)/tsc --noEmit --watch & $(npm bin)/parcel ./src/index.html"
   }
 }
