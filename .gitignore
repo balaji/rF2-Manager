@@ -1,2 +1,9 @@
 /target
 .idea
+dist
+web/node_modules
+web/*.log
+web/.cache
+package-lock.json
+.gradle
+build

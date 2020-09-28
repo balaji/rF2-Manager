@@ -1,0 +1,49 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
+ext.npm = 'npm'
+if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+    ext.npm = 'npm.cmd'
+}
+
+task npm_install {
+    doLast {
+        exec {
+            workingDir './web'
+            executable npm
+            args 'install'
+        }
+        println "Executed!"
+    }
+}
+
+task npm {
+    dependsOn ':npm_install'
+    doLast {
+        exec {
+            workingDir './web'
+            executable npm
+            args 'run', '-s', 'build'
+        }
+        println "Executed!"
+    }
+}
+
+task build {
+    dependsOn ':npm'
+    doLast {
+        exec {
+            executable 'cargo'
+            args 'build'
+        }
+    }
+}
+
+task debug {
+    dependsOn ':npm'
+    doLast {
+        exec {
+            executable 'cargo'
+            args 'run'
+        }
+    }
+}
