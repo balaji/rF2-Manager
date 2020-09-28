@@ -11,15 +11,15 @@
     "@types/react": "^16.7.17",
     "@types/react-dom": "^16.0.7",
     "inline-assets": "^1.4.6",
-    "parcel-bundler": "1.10.0",
+    "parcel-bundler": "^1.12.4",
     "typescript": "^3.0.1"
   },
   "scripts": {
     "clean": "rm -rf ./dist",
     "parcel": "$(npm bin)/parcel build -d ../dist --public-url './' ./src/index.html -o output.html",
     "inline": "$(npm bin)/inline-assets ../dist/output.html ../dist/index.html",
-    "build": "yarn parcel && yarn inline",
-    "clean-build": "yarn clean && yarn build",
+    "build": "npm run -s parcel && npm run -s inline",
+    "clean-build": "npm run -s clean && npm run -s build",
     "dev": "$(npm bin)/tsc --noEmit --watch & $(npm bin)/parcel ./src/index.html"
   }
 }

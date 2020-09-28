@@ -4,6 +4,6 @@ dist
 web/node_modules
 web/*.log
 web/.cache
-yarn.lock
+package-lock.json
 .gradle
 build
